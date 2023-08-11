@@ -1,0 +1,17 @@
+{
+  "name": "@babylon/shooter",
+  "packageManager": "yarn@3.6.1",
+  "scripts": {
+    "echo": "echo 'hello world'",
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "@babylonjs/core": "^6.16.0",
+    "@babylonjs/gui": "^6.16.0",
+    "pepjs": "^0.5.3"
+  },
+  "devDependencies": {
+    "vite": "^4.4.9"
+  }
+}

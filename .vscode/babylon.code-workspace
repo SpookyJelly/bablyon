@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+      "name": "vite",
+      "path": "../packages/vite"
+    },
+    {
+      "name": "shooter",
+      "path": "../packages/shooter"
+    },
+    {
+      "name": "root",
+      "path": "../"
+    }
+  ],
+  "settings": {
+    "git.ignoreLimitWarning": true
+  }
+}
