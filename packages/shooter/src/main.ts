@@ -26,6 +26,6 @@ async function main(canvas: HTMLCanvasElement): Promise<void> {
   await context.switchSceneWithDispose(SceneNo.MainScene);
 }
 
-const canvas = document.querySelector<HTMLCanvasElement>("app");
+const canvas = document.querySelector<HTMLCanvasElement>("#app");
 if (!canvas) throw new Error("Could not find canvas element");
 main(canvas).catch((err) => console.error(err));
