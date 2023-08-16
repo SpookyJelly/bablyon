@@ -51,9 +51,11 @@ export class ContextHolder {
     }
 
     // const scene = createScene(this._engine, sceneNo);
+
     const scene = new SceneGenerator(this._engine, sceneNo);
+    console.log("scen", scene);
     await scene.start();
-    this._sceneInstances.set(sceneNo, scene);
+    // this._sceneInstances.set(sceneNo, scene);
   }
 
   public async switchSceneWithDispose(sceneNo: SceneNo): Promise<void> {
