@@ -10,6 +10,7 @@ import {
   SSAORenderingPipeline,
   Scene,
   ShadowGenerator,
+  Sound,
   Vector3,
 } from "@babylonjs/core";
 import {
@@ -21,7 +22,10 @@ import {
   loadMobs,
 } from "./stage";
 import { ShooterCameraDashInput } from "./camera/ShooterCameraDashInput";
-import { AdvancedDynamicTexture, Rectangle, TextBlock } from "@babylonjs/gui";
+import { createEnemyUI, setUpRemainEnemy } from "./ui/remainEnemy";
+import { setUpCrossHair } from "./ui/crossHair";
+import { clearEnemyUI, resetEnemy } from "./ui/clearEnemy";
+import gunfireSoundURL from "../assets/gunfire.mp3?url";
 
 export class MainScene {
   readonly #engine: Engine;
@@ -29,6 +33,7 @@ export class MainScene {
   readonly #camera: Camera;
   readonly #mainLight: DirectionalLight;
   readonly #shadowGenerator: ShadowGenerator;
+  #gunfireSound?: Sound;
 
   constructor(engine: Engine) {
     this.#engine = engine;
@@ -75,19 +80,27 @@ export class MainScene {
     await loadMobs(this.#scene, this.#shadowGenerator);
 
     // TODO: add sound effect
-    // this.gunfireSound = await new Promise((resolve: (value: Sound) => void) => {
-    //   const sound: Sound = new Sound(
-    //     `Gunfire`,
-    //     gunfireSoundURL,
-    //     this.#scene,
-    //     () => resolve(sound)
-    //   );
-    // });
+    this.#gunfireSound = await new Promise(
+      (resolve: (value: Sound) => void) => {
+        const sound: Sound = new Sound(
+          `Gunfire`,
+          gunfireSoundURL,
+          this.#scene,
+          () => resolve(sound)
+        );
+      }
+    );
 
     this.#scene.activeCamera = this.#camera;
     document.addEventListener("click", this.onMouseClick);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "r") {
+        resetEnemy(this.#scene, this.#shadowGenerator);
+      }
+    });
 
     const textblock = createEnemyUI();
+    clearEnemyUI();
 
     this.#engine.runRenderLoop(() => {
       this.#scene.render();
@@ -99,6 +112,7 @@ export class MainScene {
   }
   public async dispose(): Promise<void> {
     // TODO
+    //
     this.#scene.dispose();
   }
   public async render(): Promise<void> {
@@ -118,10 +132,9 @@ export class MainScene {
     const forwardPosition = this.#camera.getDirection(Vector3.Forward());
     const ray = new Ray(originPosition, forwardPosition, 200);
 
-    // TODO: add sound here
-    // if(this.gunfireSound){
-    //   this.gunfireSound.play();
-    // }
+    if (this.#gunfireSound) {
+      this.#gunfireSound.play();
+    }
     const hit = this.#scene.pickWithRay(ray, (mesh) => {
       return mesh.name.match(/^mob-./) !== null;
     });
@@ -145,40 +158,4 @@ function setUpMainCamera(canvas: HTMLCanvasElement, scene: Scene): Camera {
   camera.ellipsoid = new Vector3(1.2, 1.2, 1.2);
   camera.checkCollisions = true;
   return camera;
-}
-
-function setUpRemainEnemy(Remains: number, textBlock: TextBlock) {
-  textBlock.text = "Enemy Left:" + Remains.toString();
-  return textBlock;
-}
-const createEnemyUI = () => {
-  const texture = AdvancedDynamicTexture.CreateFullscreenUI("EnemyUI");
-
-  const textblock = new TextBlock();
-  texture.addControl(textblock);
-  textblock.fontSize = "24px";
-  textblock.color = "white";
-  textblock.top = "-45%";
-  textblock.left = "40%";
-  return textblock;
-};
-
-function setUpCrossHair(): AdvancedDynamicTexture {
-  const texture = AdvancedDynamicTexture.CreateFullscreenUI("FullscreenUI");
-
-  const xRect = new Rectangle("xRect");
-  xRect.height = "2px";
-  xRect.width = "20px";
-  xRect.background = "White";
-  xRect.color = "White";
-
-  const yRect = new Rectangle("yRect");
-  yRect.height = "20px";
-  yRect.width = "2px";
-  yRect.background = "White";
-  yRect.color = "White";
-
-  texture.addControl(xRect);
-  texture.addControl(yRect);
-  return texture;
 }
