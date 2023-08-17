@@ -12,7 +12,6 @@ import {
   ShadowGenerator,
   Vector3,
 } from "@babylonjs/core";
-import { SceneNo } from "../SceneNo";
 import {
   skybox,
   ground,
@@ -22,7 +21,7 @@ import {
   loadMobs,
 } from "./stage";
 import { ShooterCameraDashInput } from "./camera/ShooterCameraDashInput";
-import { AdvancedDynamicTexture, Rectangle } from "@babylonjs/gui";
+import { AdvancedDynamicTexture, Rectangle, TextBlock } from "@babylonjs/gui";
 
 export class MainScene {
   readonly #engine: Engine;
@@ -84,11 +83,18 @@ export class MainScene {
     //     () => resolve(sound)
     //   );
     // });
+
     this.#scene.activeCamera = this.#camera;
     document.addEventListener("click", this.onMouseClick);
 
+    const textblock = createEnemyUI();
+
     this.#engine.runRenderLoop(() => {
       this.#scene.render();
+      const remains = this.#scene.meshes.filter((mesh) => {
+        return mesh.name.match(/^mob-./) !== null;
+      });
+      setUpRemainEnemy(remains.length, textblock);
     });
   }
   public async dispose(): Promise<void> {
@@ -140,6 +146,22 @@ function setUpMainCamera(canvas: HTMLCanvasElement, scene: Scene): Camera {
   camera.checkCollisions = true;
   return camera;
 }
+
+function setUpRemainEnemy(Remains: number, textBlock: TextBlock) {
+  textBlock.text = "Enemy Left:" + Remains.toString();
+  return textBlock;
+}
+const createEnemyUI = () => {
+  const texture = AdvancedDynamicTexture.CreateFullscreenUI("EnemyUI");
+
+  const textblock = new TextBlock();
+  texture.addControl(textblock);
+  textblock.fontSize = "24px";
+  textblock.color = "white";
+  textblock.top = "-45%";
+  textblock.left = "40%";
+  return textblock;
+};
 
 function setUpCrossHair(): AdvancedDynamicTexture {
   const texture = AdvancedDynamicTexture.CreateFullscreenUI("FullscreenUI");
