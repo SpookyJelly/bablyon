@@ -5,7 +5,7 @@
     "echo": "echo 'hello world'",
     "dev": "vite",
     "build": "vite build",
-    "deploy": "vite build && gh-pages"
+    "deploy": "vite build && gh-pages -d docs"
   },
   "dependencies": {
     "@babylonjs/core": "^6.16.0",
