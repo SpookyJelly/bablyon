@@ -34,6 +34,7 @@ import gunfireSoundURL from "../assets/sound/gunfire.mp3?url";
 import { recoilm } from "../assets/animation/recoil";
 // import { OBJFileLoader } from "@babylonjs/loaders";
 import "@babylonjs/loaders";
+import { loadAkm } from "./ui/akm";
 export class MainScene {
   readonly #engine: Engine;
   readonly #scene: Scene;
@@ -67,6 +68,7 @@ export class MainScene {
     this.#mainLight.shadowEnabled = true;
     this.#mainLight.diffuse = new Color3(1, 1, 0.96);
     // end
+    this.#akm = loadAkm(this.#scene, this.#camera);
 
     this.#shadowGenerator = new CascadedShadowGenerator(2048, this.#mainLight);
     setUpCrossHair();
@@ -74,53 +76,12 @@ export class MainScene {
       this.#camera,
     ]);
 
-    /**
-     * start main loop
-     *
-     */
-
-    // transform Node test
-    // Transform Node 가 뭔지..
-    this.#akm = new TransformNode("akm", this.#scene);
-    this.#akm.parent = this.#camera; // setting camera as parent makes follow camera
-    this.#camera.fov = 1;
-    // parent가 camera가 되면, camera의 rotation에 따라서 움직인다.
-    this.#akm.position = new Vector3(0.75, -0.95, 0.9);
-    // this.#akm.rotation.x = -0.01;
-
-    // must import loader before use
-
-    SceneLoader.ImportMesh(
-      "",
-      "https://dl.dropbox.com/s/kqnda4k2aqx8pro/",
-      "AKM.obj",
-      this.#scene,
-      (newMeshes) => {
-        const mat = new StandardMaterial("", this.#scene);
-        mat.diffuseTexture = new Texture(
-          "https://dl.dropbox.com/s/isvd4dggvp3vks2/akm_diff.tga"
-        );
-        mat.bumpTexture = new Texture(
-          "https://dl.dropbox.com/s/hiuhjsp4pckt9pu/akm_norm.tga"
-        );
-        mat.specularTexture = new Texture(
-          "https://dl.dropbox.com/s/f3samm7vuvl0ez4/akm_spec.tga"
-        );
-        for (var i = 0; i < newMeshes.length; i++) {
-          let ak = newMeshes[i];
-          ak.material = mat;
-          ak.scaling.x = 0.05;
-          ak.scaling.y = 0.05;
-          ak.scaling.z = 0.05;
-          ak.isPickable = false;
-          ak.parent = this.#akm;
-        }
-      }
-    );
-
     // animation
     this.#akm.animations.push(recoilm);
   }
+  /** start main loop
+   *
+   */
   public async start(): Promise<void> {
     skybox(this.#scene);
     ground(this.#scene);
