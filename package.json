@@ -9,6 +9,7 @@
     "vite": "yarn workspace @babylon/vite"
   },
   "devDependencies": {
+    "@babylonjs/loaders": "^6.16.2",
     "typescript": "^5.1.6"
   }
 }

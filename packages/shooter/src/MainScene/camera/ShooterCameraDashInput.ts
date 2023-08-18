@@ -36,6 +36,9 @@ export class ShooterCameraDashInput implements ICameraInput<FreeCamera> {
     noPreventDefault = Tools.BackCompatCameraNoPreventDefault(arguments);
     this.camera.angularSensibility = 5000; // gets input sensibility for mouse input. Higher values reduce sensitivity.
     this.camera.getScene().gravity = new Vector3(0, -0.1, 0);
+
+    this.camera.applyGravity = true;
+
     const observer = this.camera.getScene().onKeyboardObservable.add((info) => {
       // type === 1 means keydown (maybe)
       this.#isDash = info.type === 1 && info.event.code === "ShiftLeft";

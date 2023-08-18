@@ -9,6 +9,7 @@
   "dependencies": {
     "@babylonjs/core": "^6.16.0",
     "@babylonjs/gui": "^6.16.0",
+    "@babylonjs/loaders": "^6.16.2",
     "pepjs": "^0.5.3"
   },
   "devDependencies": {

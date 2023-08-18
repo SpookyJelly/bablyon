@@ -282,6 +282,7 @@ __metadata:
   dependencies:
     "@babylonjs/core": ^6.16.0
     "@babylonjs/gui": ^6.16.0
+    "@babylonjs/loaders": ^6.16.2
     pepjs: ^0.5.3
     vite: ^4.4.9
   languageName: unknown
@@ -321,6 +322,16 @@ __metadata:
   peerDependencies:
     "@babylonjs/core": ^6.0.0
   checksum: fefbedb2fe9bfbe3fc044fb7d709345efee8cc0220b2de185194d5e4a7c65fddb145744dad758b4683a3e7c7292f9689ea5b4f8a20e567c751a82d8be0b9db7d
+  languageName: node
+  linkType: hard
+
+"@babylonjs/loaders@npm:^6.16.2":
+  version: 6.16.2
+  resolution: "@babylonjs/loaders@npm:6.16.2"
+  peerDependencies:
+    "@babylonjs/core": ^6.0.0
+    babylonjs-gltf2interface: ^6.0.0
+  checksum: 1a1e9e9568c54fbaa27372e6549e62b18301b769235a4753b664ac9a0052a076894e382be736c7da34d52e153f5b0da68a9859dd88a471d26a8ef68f54b76b84
   languageName: node
   linkType: hard
 
@@ -975,6 +986,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "babylon@workspace:."
   dependencies:
+    "@babylonjs/loaders": ^6.16.2
     typescript: ^5.1.6
   languageName: unknown
   linkType: soft
