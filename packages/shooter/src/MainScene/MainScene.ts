@@ -31,7 +31,7 @@ import { createEnemyUI, setUpRemainEnemy } from "./ui/remainEnemy";
 import { setUpCrossHair } from "./ui/crossHair";
 import { clearEnemyUI, resetEnemy } from "./ui/clearEnemy";
 import gunfireSoundURL from "../assets/sound/gunfire.mp3?url";
-import { recoilm } from "../assets/animation/recoil";
+import { recoilm } from "../assets/animation/index";
 // import { OBJFileLoader } from "@babylonjs/loaders";
 import "@babylonjs/loaders";
 import { loadAkm } from "./ui/akm";

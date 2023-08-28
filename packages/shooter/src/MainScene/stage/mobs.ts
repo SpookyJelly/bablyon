@@ -24,7 +24,7 @@ export async function loadMobs(
       scene
     );
 
-    capsuleBase.position.y = 1;
+    // capsuleBase.position.y = 1;
     const material = new StandardMaterial("mobMaterial", scene);
     material.diffuseColor = new Color3(
       Math.random(),
