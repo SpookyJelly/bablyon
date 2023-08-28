@@ -11,6 +11,10 @@
     {
       "name": "root",
       "path": "../"
+    },
+    {
+      "name": "rending",
+      "path": "../packages/rending"
     }
   ],
   "settings": {

@@ -6,7 +6,8 @@
   ],
   "scripts": {
     "shooter": "yarn workspace @babylon/shooter",
-    "vite": "yarn workspace @babylon/vite"
+    "vite": "yarn workspace @babylon/vite",
+    "rending": "yarn workspace @babylon/rending"
   },
   "devDependencies": {
     "@babylonjs/loaders": "^6.16.2",
