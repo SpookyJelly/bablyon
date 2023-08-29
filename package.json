@@ -7,7 +7,8 @@
   "scripts": {
     "shooter": "yarn workspace @babylon/shooter",
     "vite": "yarn workspace @babylon/vite",
-    "rending": "yarn workspace @babylon/rending"
+    "rending": "yarn workspace @babylon/rending",
+    "build": "yarn workspaces foreach -p run build && yarn workspace @babylon/rending postbuild"
   },
   "devDependencies": {
     "@babylonjs/loaders": "^6.16.2",

@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo Hello world!"
+    "test": "echo Hello world!",
+    "cp": "cp -r ../shooter/docs/* ./pages/shooter",
+    "serve": "serve",
+    "postbuild": "yarn run cp && node htmlModifier.js"
   },
   "author": "",
   "license": "ISC"
