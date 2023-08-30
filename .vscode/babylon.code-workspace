@@ -9,12 +9,16 @@
       "path": "../packages/shooter"
     },
     {
-      "name": "root",
-      "path": "../"
-    },
-    {
       "name": "rending",
       "path": "../packages/rending"
+    },
+    {
+      "name": "ticktac",
+      "path": "../packages/ticktac"
+    },
+    {
+      "name": "root",
+      "path": "../"
     }
   ],
   "settings": {

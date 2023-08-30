@@ -295,6 +295,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@babylon/ticktac@workspace:packages/ticktac":
+  version: 0.0.0-use.local
+  resolution: "@babylon/ticktac@workspace:packages/ticktac"
+  dependencies:
+    "@babylonjs/core": ^6.18.0
+    "@babylonjs/inspector": ^6.18.0
+    "@babylonjs/loaders": ^6.18.0
+    "@babylonjs/materials": ^6.18.0
+    "@types/yuka": ^0.7.1
+    vite: ^4.4.9
+    yuka: ^0.7.8
+  languageName: unknown
+  linkType: soft
+
 "@babylon/vite@workspace:packages/vite":
   version: 0.0.0-use.local
   resolution: "@babylon/vite@workspace:packages/vite"
@@ -323,12 +337,39 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babylonjs/core@npm:^6.18.0":
+  version: 6.18.0
+  resolution: "@babylonjs/core@npm:6.18.0"
+  checksum: ebf52be6934a7ff148016b3350cc4868254e505e90a153b7453e4912e0fe27120e98aa20f566c4cc0ef6658fa375bad48e75def9d8cf21f74ab4f3d5aef9406e
+  languageName: node
+  linkType: hard
+
 "@babylonjs/gui@npm:^6.16.0":
   version: 6.16.0
   resolution: "@babylonjs/gui@npm:6.16.0"
   peerDependencies:
     "@babylonjs/core": ^6.0.0
   checksum: fefbedb2fe9bfbe3fc044fb7d709345efee8cc0220b2de185194d5e4a7c65fddb145744dad758b4683a3e7c7292f9689ea5b4f8a20e567c751a82d8be0b9db7d
+  languageName: node
+  linkType: hard
+
+"@babylonjs/inspector@npm:^6.18.0":
+  version: 6.18.0
+  resolution: "@babylonjs/inspector@npm:6.18.0"
+  dependencies:
+    "@fortawesome/fontawesome-svg-core": ^6.1.0
+    "@fortawesome/free-regular-svg-icons": ^6.0.0
+    "@fortawesome/free-solid-svg-icons": ^6.0.0
+  peerDependencies:
+    "@babylonjs/core": ^6.0.0
+    "@babylonjs/gui": ^6.0.0
+    "@babylonjs/gui-editor": ^6.0.0
+    "@babylonjs/loaders": ^6.0.0
+    "@babylonjs/materials": ^6.0.0
+    "@babylonjs/serializers": ^6.0.0
+    "@types/react": ">=16.7.3"
+    "@types/react-dom": ">=16.0.9"
+  checksum: 7e448d719c621f5e174740752ee2668c16e57bb77fb34ceb57c2f850803f17f1392909aca2220bc9b8a03e04a2fe4afaf31c4413366d85417191aecce9b47af3
   languageName: node
   linkType: hard
 
@@ -339,6 +380,25 @@ __metadata:
     "@babylonjs/core": ^6.0.0
     babylonjs-gltf2interface: ^6.0.0
   checksum: 1a1e9e9568c54fbaa27372e6549e62b18301b769235a4753b664ac9a0052a076894e382be736c7da34d52e153f5b0da68a9859dd88a471d26a8ef68f54b76b84
+  languageName: node
+  linkType: hard
+
+"@babylonjs/loaders@npm:^6.18.0":
+  version: 6.18.0
+  resolution: "@babylonjs/loaders@npm:6.18.0"
+  peerDependencies:
+    "@babylonjs/core": ^6.0.0
+    babylonjs-gltf2interface: ^6.0.0
+  checksum: 5d7ed5973cb209001dd558a0a40beec7d25aefcfe16bf7b1c585ded80ddab8239975e0921294b309cc77e585ea1bc6e2fd32a2d92e4ed5da6947439b5d0e127e
+  languageName: node
+  linkType: hard
+
+"@babylonjs/materials@npm:^6.18.0":
+  version: 6.18.0
+  resolution: "@babylonjs/materials@npm:6.18.0"
+  peerDependencies:
+    "@babylonjs/core": ^6.0.0
+  checksum: 6cd36311d1538e4b4915b2b3ae5234cc9430479a797cbfc2e0b470d325fe4b2b6fdaf29218c580d66d58f51048fd4a4b7b31301baf8acaf131090d536a2830a9
   languageName: node
   linkType: hard
 
@@ -538,6 +598,40 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fortawesome/fontawesome-common-types@npm:6.4.2":
+  version: 6.4.2
+  resolution: "@fortawesome/fontawesome-common-types@npm:6.4.2"
+  checksum: 4a22932bd0cac65be1d35b739624f366b6c247b60eb5b8f66218957f54ce1cae56e2a20ea88789ede45d1e1c0c1014f160e01c1752122ec174ad0823e60f94bf
+  languageName: node
+  linkType: hard
+
+"@fortawesome/fontawesome-svg-core@npm:^6.1.0":
+  version: 6.4.2
+  resolution: "@fortawesome/fontawesome-svg-core@npm:6.4.2"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": 6.4.2
+  checksum: 0c0ecd9058883b128127e2b281c983ba6272be38a17577aaa2293ada58e9b1538357fe44430ded508d49ae3f5cc55aa720a0448d2b9d99689bb912d786f034e5
+  languageName: node
+  linkType: hard
+
+"@fortawesome/free-regular-svg-icons@npm:^6.0.0":
+  version: 6.4.2
+  resolution: "@fortawesome/free-regular-svg-icons@npm:6.4.2"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": 6.4.2
+  checksum: fdb78fced6087f83b45fc1d73de874c69956aa07e7376b8f79b3b0b76e9f800d06c4586b5431acea4e8b5ebc40866f2c4e87fc02986cae7b066c1ea9d150d7e1
+  languageName: node
+  linkType: hard
+
+"@fortawesome/free-solid-svg-icons@npm:^6.0.0":
+  version: 6.4.2
+  resolution: "@fortawesome/free-solid-svg-icons@npm:6.4.2"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": 6.4.2
+  checksum: 4a365004990d5b1c970fb30c11b284b0b807903d0ecb193eb9b5a5e41ea7c0b8fff5c60480c580a1e44535cf23c5d9c90cb698189741e40ea3e10ac66290709c
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.10":
   version: 0.11.10
   resolution: "@humanwhocodes/config-array@npm:0.11.10"
@@ -714,6 +808,13 @@ __metadata:
   version: 7.5.0
   resolution: "@types/semver@npm:7.5.0"
   checksum: 0a64b9b9c7424d9a467658b18dd70d1d781c2d6f033096a6e05762d20ebbad23c1b69b0083b0484722aabf35640b78ccc3de26368bcae1129c87e9df028a22e2
+  languageName: node
+  linkType: hard
+
+"@types/yuka@npm:^0.7.1":
+  version: 0.7.1
+  resolution: "@types/yuka@npm:0.7.1"
+  checksum: 34c30753bde0117919bb1469884e6fc026be2e980a18c3ec0744e23878e1e089d1c4a7ac9db9494179306cb994bd1d56ed29b9814c3546246fb7bedf78c6bddd
   languageName: node
   linkType: hard
 
@@ -3279,5 +3380,12 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: f77b3d8d00310def622123df93d4ee654fc6a0096182af8bd60679ddcdfb3474c56c6c7190817c84a2785648cdee9d721c0154eb45698c62176c322fb46fc700
+  languageName: node
+  linkType: hard
+
+"yuka@npm:^0.7.8":
+  version: 0.7.8
+  resolution: "yuka@npm:0.7.8"
+  checksum: a841264c410a0637996a19693570dc33ff24ad8802d954f8d4c2c5817b148a41bdc51eff188759cfdb68ff81fd792899e761767d62aa28f77450eaf1ad7e9f7e
   languageName: node
   linkType: hard
