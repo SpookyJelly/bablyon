@@ -9,6 +9,7 @@
     "vite": "yarn workspace @babylon/vite",
     "rending": "yarn workspace @babylon/rending",
     "ticktac": "yarn workspace @babylon/ticktac",
+    "starfield": "yarn workspace @babylon/starfield",
     "build": "yarn workspaces foreach -p run build && yarn workspace @babylon/rending postbuild"
   },
   "devDependencies": {

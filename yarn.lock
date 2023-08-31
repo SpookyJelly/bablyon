@@ -295,6 +295,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@babylon/starfield@workspace:packages/starfield":
+  version: 0.0.0-use.local
+  resolution: "@babylon/starfield@workspace:packages/starfield"
+  dependencies:
+    "@babylonjs/core": ^6.18.0
+    "@babylonjs/gui": ^6.18.0
+    "@babylonjs/loaders": ^6.18.0
+    "@babylonjs/materials": ^6.18.0
+    "@types/event-emitter": ^0.3.3
+    "@types/events": ^3.0.0
+    eventemitter3: ^5.0.1
+    vite: ^4.4.9
+  languageName: unknown
+  linkType: soft
+
 "@babylon/ticktac@workspace:packages/ticktac":
   version: 0.0.0-use.local
   resolution: "@babylon/ticktac@workspace:packages/ticktac"
@@ -350,6 +365,15 @@ __metadata:
   peerDependencies:
     "@babylonjs/core": ^6.0.0
   checksum: fefbedb2fe9bfbe3fc044fb7d709345efee8cc0220b2de185194d5e4a7c65fddb145744dad758b4683a3e7c7292f9689ea5b4f8a20e567c751a82d8be0b9db7d
+  languageName: node
+  linkType: hard
+
+"@babylonjs/gui@npm:^6.18.0":
+  version: 6.18.0
+  resolution: "@babylonjs/gui@npm:6.18.0"
+  peerDependencies:
+    "@babylonjs/core": ^6.0.0
+  checksum: 89701d5655cb2a68e6628fd9f6e2763a176d3e968d72c9795060f151dab6b62e9ecd827b9badcce2ec5e9144d9198e4fd88c62b004b5fe3bd8a56b1dd31fee7e
   languageName: node
   linkType: hard
 
@@ -760,6 +784,20 @@ __metadata:
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
   checksum: ad87447820dd3f24825d2d947ebc03072b20a42bfc96cbafec16bff8bbda6c1a81fcb0be56d5b21968560c5359a0af4038a68ba150c3e1694fe4c109a063bed8
+  languageName: node
+  linkType: hard
+
+"@types/event-emitter@npm:^0.3.3":
+  version: 0.3.3
+  resolution: "@types/event-emitter@npm:0.3.3"
+  checksum: 1958d07599371285cf193ea087e1e8961aa6463f026025a55e3f4e9485b8828f088adf8df55e047392d8caa74ea095fdca2fe20bbbc79473448358f9ef02ff01
+  languageName: node
+  linkType: hard
+
+"@types/events@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@types/events@npm:3.0.0"
+  checksum: 9a424c2da210957d5636e0763e8c9fc3aaeee35bf411284ddec62a56a6abe31de9c7c2e713dabdd8a76ff98b47db2bd52f61310be6609641d6234cc842ecbbe3
   languageName: node
   linkType: hard
 
@@ -1666,6 +1704,13 @@ __metadata:
   version: 2.0.3
   resolution: "esutils@npm:2.0.3"
   checksum: 22b5b08f74737379a840b8ed2036a5fb35826c709ab000683b092d9054e5c2a82c27818f12604bfc2a9a76b90b6834ef081edbc1c7ae30d1627012e067c6ec87
+  languageName: node
+  linkType: hard
+
+"eventemitter3@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "eventemitter3@npm:5.0.1"
+  checksum: 543d6c858ab699303c3c32e0f0f47fc64d360bf73c3daf0ac0b5079710e340d6fe9f15487f94e66c629f5f82cd1a8678d692f3dbb6f6fcd1190e1b97fcad36f8
   languageName: node
   linkType: hard
 

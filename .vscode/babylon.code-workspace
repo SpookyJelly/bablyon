@@ -17,6 +17,10 @@
       "path": "../packages/ticktac"
     },
     {
+      "name": "starfield",
+      "path": "../packages/starfield"
+    },
+    {
       "name": "root",
       "path": "../"
     }
