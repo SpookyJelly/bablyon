@@ -21,9 +21,8 @@ export function Scene1(engine: Engine) {
   advancedTexture.addControl(button);
 
   button.onPointerUpObservable.add(() => {
-    console.log("a");
-    Emitter.emit("message", "hello");
-    scene.dispose();
+    Emitter.emit("sceneChange", ["scene2", scene]);
+    // scene.dispose();
   });
 
   engine.runRenderLoop(() => {
