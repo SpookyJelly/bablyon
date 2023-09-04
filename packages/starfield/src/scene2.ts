@@ -25,9 +25,7 @@ export function Scene2(engine: Engine) {
   advancedTexture.addControl(button);
 
   button.onPointerUpObservable.add(() => {
-    // Emitter.emit("sceneChange", "scene1");
     Emitter.emit("sceneChange", ["scene1", scene]);
-    // scene.dispose();
   });
   return scene;
 }

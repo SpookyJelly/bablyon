@@ -18,7 +18,7 @@ async function main(canvas: HTMLCanvasElement) {
   const Manager = new SceneManger(engine);
 
   Emitter.on("sceneChange", ([sceneName, scene]: [string, Scene]) => {
-    console.log("scene", scene);
+    console.log("a");
     if (scene) scene.dispose(); // sceneChange에서 모든 것을 처리하도록 수정했는데, 이게 맞는지 모르겠다
     Manager.switchToScene(sceneName);
   });
