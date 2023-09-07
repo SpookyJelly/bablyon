@@ -10,6 +10,7 @@
     "rending": "yarn workspace @babylon/rending",
     "ticktac": "yarn workspace @babylon/ticktac",
     "starfield": "yarn workspace @babylon/starfield",
+    "pixi": "yarn workspace @babylon/pixi",
     "build": "yarn workspaces foreach -p run build && yarn workspace @babylon/rending postbuild"
   },
   "devDependencies": {

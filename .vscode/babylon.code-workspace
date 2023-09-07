@@ -21,6 +21,10 @@
       "path": "../packages/starfield"
     },
     {
+      "name": "pixi",
+      "path": "../packages/pixi"
+    },
+    {
       "name": "root",
       "path": "../"
     }

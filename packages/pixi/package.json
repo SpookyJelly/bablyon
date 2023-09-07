@@ -1,0 +1,12 @@
+{
+  "name": "@babylon/pixi",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite"
+  },
+  "dependencies": {
+    "@pixi/core": "^7.2.4",
+    "pixi.js": "^7.2.4",
+    "vite": "^4.4.9"
+  }
+}
